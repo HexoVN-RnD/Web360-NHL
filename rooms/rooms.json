@@ -1,0 +1,438 @@
+{
+  "buildingName": "Hanoi Opera House",
+  "startRoom": "courtyard_2",
+  "rooms": {
+    "courtyard": {
+      "label": "Courtyard",
+      "type": "video",
+      "video": "rooms/VID053.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "frontHallway", "yaw": -75, "pitch": 15, "label": "F1 Hallway" },
+        { "target": "courtyard_1", "yaw": 85, "pitch": -5, "label": "" }
+      ]
+    },
+    "courtyard_1": {
+      "label": "Courtyard",
+      "type": "video",
+      "video": "rooms/VID054.mp4",
+      "initialYaw": -140,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "courtyard", "yaw": 70, "pitch": 10, "label": "" },
+        { "target": "courtyard_2", "yaw": -40, "pitch": -10, "label": "Courtyard Corner" }
+      ]
+    },
+    "courtyard_2": {
+      "label": "Courtyard Corner",
+      "type": "video",
+      "video": "rooms/VID055.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "courtyard", "yaw": 50, "pitch": 0, "label": "" },
+        { "target": "courtyard_1", "yaw": 110, "pitch": 0, "label": "" }
+      ]
+    },
+    "frontHallway": {
+      "label": "F1 Hallway",
+      "type": "video",
+      "video": "rooms/VID040.mp4",
+      "initialYaw": 0,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "hallwayF1", "yaw": -100, "pitch": 0, "label": "" },
+        { "target": "frontHallwayCorner", "yaw": -170, "pitch": 0, "label": "F1 Corner" },
+        { "target": "courtyard", "yaw": 120, "pitch": 0, "label": "Courtyard" },
+        { "target": "auditorium", "yaw": 50, "pitch": 0, "label": "Auditorium" }
+      ]
+    },
+    "frontHallwayCorner": {
+      "label": "F1 Corner",
+      "image": "rooms/IMG058.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "frontHallway", "yaw": 185, "pitch": 0, "label": "" },
+        { "target": "hallwayF1", "yaw": 75, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF1": {
+      "label": "F1 Hallway",
+      "image": "rooms/IMG060.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "frontHallway", "yaw": 150, "pitch": 0, "label": "" },
+        { "target": "frontHallwayCorner", "yaw": 180, "pitch": 0, "label": "F1 Corner" },
+        { "target": "hallwayF1_1", "yaw": -5, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF1_1": {
+      "label": "F1 Hallway",
+      "image": "rooms/IMG061.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF1", "yaw": 205, "pitch": 0, "label": "" },
+        { "target": "hallwayF1_2", "yaw": 25, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF1_2": {
+      "label": "F1 Hallway",
+      "image": "rooms/IMG062.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF1_1", "yaw": 205, "pitch": 0, "label": "" },
+        { "target": "hallwayF1_3", "yaw": 25, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF1_3": {
+      "label": "F1 Hallway",
+      "image": "rooms/IMG063.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF1_2", "yaw": 185, "pitch": 0, "label": "" },
+        { "target": "stairwayF2", "yaw": -65, "pitch": 15, "label": "F2 Stairway" }
+      ]
+    },
+    "stairwayF2": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG064.webp",
+      "initialYaw": 0,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "stairwayF2_1", "yaw": -35, "pitch": 0, "label": "" },
+        { "target": "hallwayF1_3", "yaw": 60, "pitch": 0, "label": "F1 Hallway" }
+      ]
+    },
+    "stairwayF2_1": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG066.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "stairwayF2", "yaw": -30, "pitch": -45, "label": "" },
+        { "target": "stairwayF2_2", "yaw": 60, "pitch": 40, "label": "" }
+      ]
+    },
+    "stairwayF2_2": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG067.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "stairwayF2_1", "yaw": -50, "pitch": -35, "label": "" },
+        { "target": "hallwayF2_0", "yaw": 70, "pitch": 0, "label": "F2 Hallway" }
+      ]
+    },
+    "hallwayF2_0": {
+      "label": "F2 Hallway",
+      "type": "video",
+      "video": "rooms/VID032.mp4",
+      "initialYaw": 0,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "stairwayF2_2", "yaw": 160, "pitch": -25, "label": "F2 Stairway" },
+        { "target": "hallwayF2_00", "yaw": 20, "pitch": 20, "label": "" }
+      ]
+    },
+    "hallwayF2_00": {
+      "label": "F2 Hallway",
+      "type": "video",
+      "video": "rooms/VID031.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF2_0", "yaw": -150, "pitch": 0, "label": "" },
+        { "target": "hallwayF2", "yaw": 50, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_13", "yaw": 20, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG069.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_00", "yaw": 130, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_1", "yaw": 5, "pitch": -35, "label": "" }
+      ]
+    },
+    "hallwayF2_1": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG070.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "room1F2", "yaw": 65, "pitch": 0, "label": "F2 Room 1" },
+        { "target": "hallwayF2", "yaw": -25, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_2": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG073.webp",
+      "initialYaw": -70,
+      "hotspots": [
+        { "target": "room1F2", "yaw": -35, "pitch": 0, "label": "F2 Room 1" },
+        { "target": "hallwayF2_3", "yaw": 145, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_3": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG074.webp",
+      "initialYaw": -135,
+      "hotspots": [
+        { "target": "hallwayF2_2", "yaw": -30, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_4", "yaw": 145, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_4": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG075.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_3", "yaw": 80, "pitch": 0, "label": "" },
+        { "target": "room3F2", "yaw": 173, "pitch": 0, "label": "F2 Room 3" }
+      ]
+    },
+    "hallwayF2_5": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG077.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_6", "yaw": -155, "pitch": 0, "label": "" },
+        { "target": "room3F2", "yaw": 105, "pitch": -10, "label": "F2 Room 3" }
+      ]
+    },
+    "hallwayF2_6": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG078.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_7", "yaw": -75, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_5", "yaw": 45, "pitch": 25, "label": "" }
+      ]
+    },
+    "hallwayF2_7": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG079.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_8", "yaw": -80, "pitch": -30, "label": "" },
+        { "target": "hallwayF2_6", "yaw": 95, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_8": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG080.webp",
+      "initialYaw": -170,
+      "hotspots": [
+        { "target": "hallwayF2_9", "yaw": -70, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_7", "yaw": 105, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_9": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG081.webp",
+      "initialYaw": 180,
+      "hotspots": [
+        { "target": "hallwayF2_10", "yaw": -55, "pitch": 0, "label": "" },
+        { "target": "hallwayF2_8", "yaw": 120, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_10": {
+      "label": "F2 Hallway",
+      "image": "rooms/IMG082.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "stairwayF3", "yaw": 25, "pitch": -20, "label": "F3 Stairway" },
+        { "target": "hallwayF2_9", "yaw": 135, "pitch": 0, "label": "" }
+      ]
+    },
+    "hallwayF2_11": {
+      "label": "F2 Hallway",
+      "type": "video",
+      "video": "rooms/VID020.mp4",
+      "initialYaw": 170,
+      "hotspots": [
+        { "target": "stairwayF3_5", "yaw": 80, "pitch": -10, "label": "F3 Stairway" },
+        { "target": "hallwayF2_12", "yaw": 170, "pitch": -10, "label": "" }
+      ]
+    },
+    "hallwayF2_12": {
+      "label": "F2 Hallway",
+      "type": "video",
+      "video": "rooms/VID021.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF2_11", "yaw": 40, "pitch": 20, "label": "" },
+        { "target": "hallwayF2_13", "yaw": -180, "pitch": -20, "label": "" }
+      ]
+    },
+    "hallwayF2_13": {
+      "label": "F2 Hallway",
+      "type": "video",
+      "video": "rooms/VID022.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF2_12", "yaw": -180, "pitch": 20, "label": "" },
+        { "target": "hallwayF2_00", "yaw": -10, "pitch": 0, "label": "" }
+      ]
+    },                       
+    "room1F2": {
+      "label": "F2 Room 1",
+      "image": "rooms/IMG071.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "room2F2", "yaw": 50, "pitch": 0, "label": "F2 Room 2" },
+        { "target": "hallwayF2_1", "yaw": -70, "pitch": 0, "label": "F2 Hallway" },
+        { "target": "hallwayF2_2", "yaw": 145, "pitch": 0, "label": "F2 Hallway" }
+      ]
+    },
+    "room2F2": {
+      "label": "F2 Room 2",
+      "image": "rooms/IMG072.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "room3F2", "yaw": -15, "pitch": -15, "label": "F2 Room 3" },
+        { "target": "room1F2", "yaw": 150, "pitch": 0, "label": "F2 Room 1" }
+      ]
+    },    
+    "room3F2": {
+      "label": "F2 Room 3",
+      "image": "rooms/IMG076.webp",
+      "initialYaw": 150,
+      "hotspots": [
+        { "target": "hallwayF2_5", "yaw": -105, "pitch": 0, "label": "F2 Hallway" },
+        { "target": "room2F2", "yaw": 140, "pitch": 0, "label": "F2 Room 2" },
+        { "target": "hallwayF2_4", "yaw": 50, "pitch": 0, "label": "F2 Hallway" }
+      ]
+    },
+    "stairwayF3": {
+      "label": "F3 Stairway",
+      "image": "rooms/IMG083.webp",
+      "initialYaw": 0,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "stairwayF3_1", "yaw": -165, "pitch": -5, "label": "" },
+        { "target": "hallwayF2_10", "yaw": 110, "pitch": 0, "label": "F2 Hallway" }
+      ]
+    },
+    "stairwayF3_1": {
+      "label": "F3 Stairway",
+      "image": "rooms/IMG084.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "stairwayF3_2", "yaw": -40, "pitch": -15, "label": "" },
+        { "target": "stairwayF3", "yaw": 50, "pitch": 70, "label": "" }
+      ]
+    },
+    "stairwayF3_2": {
+      "label": "F3 Stairway",
+      "image": "rooms/IMG085.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF3", "yaw": -105, "pitch": 0, "label": "F3 Hallway" },
+        { "target": "stairwayF3_1", "yaw": 10, "pitch": 25, "label": "" }
+      ]
+    },
+    "stairwayF3_3": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG094.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF3_7", "yaw": -80, "pitch": 0, "label": "F3 Hallway" },
+        { "target": "stairwayF3_4", "yaw": 140, "pitch": -50, "label": "" }
+      ]
+    },
+    "stairwayF3_4": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG095.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "stairwayF3_5", "yaw": -150, "pitch": -30, "label": "" },
+        { "target": "stairwayF3_3", "yaw": -55, "pitch": 60, "label": "" }
+      ]
+    },
+    "stairwayF3_5": {
+      "label": "F2 Stairway",
+      "image": "rooms/IMG096.webp",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF2_11", "yaw": 175, "pitch": 0, "label": "F2 Hallway" },
+        { "target": "stairwayF3_4", "yaw": 155, "pitch": 25, "label": "" }
+      ]
+    },
+    "hallwayF3": {
+      "label": "F3 Hallway",
+      "type": "video",
+      "video": "rooms/VID019.mp4",
+      "initialYaw": 0,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "stairwayF3_2", "yaw": 80, "pitch": 0, "label": "F3 Stairway" },
+        { "target": "hallwayF3_2", "yaw": -130, "pitch": 0, "label": "" }
+      ]
+    },  
+    "hallwayF3_2": {
+      "label": "F3 Hallway",
+      "type": "video",
+      "video": "rooms/VID018.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF3_3", "yaw": -95, "pitch": 0, "label": "" },
+        { "target": "hallwayF3", "yaw": 60, "pitch": 0, "label": "" }
+      ]
+    },    
+    "hallwayF3_3": {
+      "label": "F3 Hallway",
+      "type": "video",
+      "video": "rooms/VID017.mp4",
+      "initialYaw": -120,
+      "hotspots": [
+        { "target": "hallwayF3_4", "yaw": -105, "pitch": 10, "label": "" },
+        { "target": "hallwayF3_2", "yaw": 0, "pitch": 0, "label": "" }
+      ]
+    },    
+    "hallwayF3_4": {
+      "label": "F3 Hallway",
+      "type": "video",
+      "video": "rooms/VID016.mp4",
+      "initialYaw": -80,
+      "hotspots": [
+        { "target": "hallwayF3_5", "yaw": 150, "pitch": -5, "label": "" },
+        { "target": "hallwayF3_3", "yaw": -65, "pitch": 0, "label": "" }
+      ]
+    },    
+    "hallwayF3_5": {
+      "label": "F3 Hallway",
+      "type": "video",
+      "video": "rooms/VID015.mp4",
+      "initialYaw": 0,
+      "hotspots": [
+        { "target": "hallwayF3_6", "yaw": -30, "pitch": 0, "label": "" },
+        { "target": "hallwayF3_4", "yaw": 130, "pitch": 0, "label": "" }
+      ]
+    },    
+    "hallwayF3_6": {
+      "label": "F3 Hallway",
+      "image": "rooms/IMG092.webp",
+      "initialYaw": 40,
+      "hotspots": [
+        { "target": "hallwayF3_7", "yaw": -175, "pitch": 0, "label": "" },
+        { "target": "hallwayF3_5", "yaw": 5, "pitch": 0, "label": "" }
+      ]
+    },    
+    "hallwayF3_7": {
+      "label": "F3 Hallway",
+      "image": "rooms/IMG093.webp",
+      "initialYaw": 160,
+      "hotspots": [
+        { "target": "hallwayF3_6", "yaw": 0, "pitch": 0, "label": "" },
+        { "target": "stairwayF3_3", "yaw": 150, "pitch": 0, "label": "F2 Stairway" }
+      ]
+    },
+    "auditorium": {
+      "label": "Auditorium",
+      "type": "video",
+      "video": "rooms/VID010.mp4",
+      "initialYaw": 150,
+      "showInMenu": true,
+      "hotspots": [
+        { "target": "frontHallway", "yaw": -150, "pitch": 0, "label": "F1 Hallway" }
+      ]
+    }       
+  }
+}

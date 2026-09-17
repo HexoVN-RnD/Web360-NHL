@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Hanoi Opera House</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Vendored locally: no CDN / external platform dependency -->
+  <script src="vendor/aframe.min.js"></script>
+</head>
+<body>
+
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <div id="loading-text">Loading tour…</div>
+  </div>
+
+  <div id="top-bar">
+    <div id="building-title">
+      <div class="name" id="building-name">—</div>
+      <div class="room" id="current-room-name">—</div>
+    </div>
+    <button id="menu-btn" aria-label="Room list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div id="room-panel"></div>
+
+  <!-- <div id="vr-hint">Click a floor marker to move between rooms · Click "VR" button (bottom-right) for headset mode</div> -->
+
+  <button id="home-btn" aria-label="Go to home room">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 11l9-8 9 8"></path>
+      <path d="M5 10v10h14V10"></path>
+      <path d="M9 20v-6h6v6"></path>
+    </svg>
+  </button>
+
+  <a-scene vr-mode-ui="enabled: true" loading-screen="enabled: false" renderer="colorManagement: true; antialias: true">
+    <a-assets id="asset-container"></a-assets>
+
+    <!-- Outside <a-assets> on purpose: elements inside it make A-Frame's
+         loading gate wait for them, and this video intentionally has no
+         src until a video room is entered (see js/tour.js), which was
+         causing a ~3s timeout warning on every page load. -->
+    <video id="tour-video" loop muted playsinline webkit-playsinline="true" preload="none" crossorigin="anonymous" style="display: none;"></video>
+
+    <!-- Content lives at y=1.6 (assumed eye height above real floor). In a
+         local-floor VR session, y=0 IS the real floor and the headset's
+         own tracked height gets you to ~1.6 automatically — so content
+         stays fixed here and only the rig (below) toggles. -->
+    <a-sky id="sky" radius="30" position="0 1.6 0" rotation="0 -90 0"></a-sky>
+    <a-videosphere id="videosphere" radius="30" position="0 1.6 0" rotation="0 -90 0"
+      material="src: #tour-video; shader: flat" visible="false">
+    </a-videosphere>
+
+    <!-- Invisible (0-scale) entity used purely to pre-warm neighboring
+         rooms' textures (decode + GPU upload + mipmaps) in the background
+         while you're still browsing the current room. A-Frame caches
+         textures by URL, so when the real <a-sky> later requests the same
+         src, it hits this cache instead of redoing the expensive work —
+         eliminating the transition-time frame hitch without touching
+         image quality at all. -->
+    <a-entity id="texture-warmer" scale="0.001 0.001 0.001" position="0 -50 0"
+      geometry="primitive: plane; width: 1; height: 1">
+    </a-entity>
+
+    <a-entity id="hotspot-root" position="0 1.6 0"></a-entity>
+
+    <a-entity id="rig" position="0 1.6 0">
+      <a-camera id="camera" look-controls="reverseMouseDrag: false" wasd-controls="enabled: false">
+        <a-cursor
+          id="cursor"
+          fuse="false"
+          raycaster="objects: .hotspot, .ui-button"
+          cursor="rayOrigin: mouse"
+          geometry="primitive: ring; radiusInner: 0.008; radiusOuter: 0.012"
+          material="color: #4fb0a5; shader: flat"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150">
+        </a-cursor>
+
+        <!-- VR HUD: children of the camera, so they stay fixed at
+             bottom-center of view no matter where you look. Hidden by
+             default, shown only while in an active VR session. -->
+        <a-entity id="vr-home-btn" visible="false"
+          geometry="primitive: plane; width: 0.1; height: 0.1"
+          material="src: #vr-home-icon; transparent: true; shader: flat"
+          position="-0.07 -0.4 -0.6">
+        </a-entity>
+        <a-entity id="vr-menu-btn" visible="false"
+          geometry="primitive: plane; width: 0.1; height: 0.1"
+          material="src: #vr-menu-icon; transparent: true; shader: flat"
+          position="0.07 -0.4 -0.6">
+        </a-entity>
+
+        <!-- VR room-list panel, filled dynamically by tour.js -->
+        <a-entity id="vr-menu-panel" visible="false" position="0 -0.15 -1.3"></a-entity>
+      </a-camera>
+
+      <!-- Quest controllers: point + pull trigger to activate a hotspot.
+           direction is tilted down (0 -0.35 -1 instead of default 0 0 -1)
+           because Touch controllers' natural resting angle otherwise
+           points the laser up and over everything when held normally. -->
+      <a-entity
+        laser-controls="hand: left"
+        raycaster="objects: .hotspot, .ui-button; far: 15; lineColor: #4fb0a5; direction: 0 -0.35 -1"
+        line="color: #4fb0a5; opacity: 0.75">
+      </a-entity>
+      <a-entity
+        laser-controls="hand: right"
+        raycaster="objects: .hotspot, .ui-button; far: 15; lineColor: #4fb0a5; direction: 0 -0.35 -1"
+        line="color: #4fb0a5; opacity: 0.75">
+      </a-entity>
+    </a-entity>
+  </a-scene>
+
+  <script src="js/tour.js"></script>
+</body>
+</html>
